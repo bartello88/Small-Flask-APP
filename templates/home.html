@@ -1,0 +1,12 @@
+{% from 'macros.html' import showFlashMessage %}
+{% extends 'layout.html '%}
+{% block body%}
+<h3>Add item to database</h3>
+<form action="/add" method="post">
+    {{showFlashMessage(messages)}}
+    <input class="form-control inp" type="text" name="first" placeholder="first">
+    <input class="form-control inp" type="text" name="last" placeholder="last">
+    <input class="form-control inp" type="number" name="pay" placeholder="salary">
+    <button class="btn btn-primary" type="submit" name="add" placeholder="Add">Add</button>
+</form>
+{% endblock%}

@@ -1,0 +1,31 @@
+{% macro showTable(query) %}
+<table class="table table-sm">
+    <thead>
+    <tr>
+        <th>First</th>
+        <th>Last</th>
+        <th>Pay</th>
+    </tr>
+    {% for i in query %}
+    <tr>
+        {% for y in i%}
+        <td>{{y}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+    </thead>
+</table>
+{% endmacro%}
+
+{% macro showFlashMessage(messages) %}
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages%}
+                <div class="alert alert-warning alert-dismissible" role="alert">
+                    <strong>Holy guacamole!</strong>{{message}}
+                    </button>
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+{% endmacro%}

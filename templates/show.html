@@ -1,0 +1,49 @@
+{% from 'macros.html' import showTable, showFlashMessage %}
+{% extends 'layout.html' %}
+
+{% block body %}
+    {{showFlashMessage(messages)}}
+
+<h3>Remove employee</h3>
+<div class="allforms">
+    <div class="forms">
+        <form action="/remove" method="POST">
+            <input class="form-control inp" type="text" name="lastremove" placeholder="remove employee">
+            <button class="btn btn-danger" type="submit" name="remove">Remove</button>
+        </form>
+        <form action="/find" method="POST">
+            <input class="form-control inp" type="text" name="findInput" placeholder="find employee">
+            <button class="btn btn-danger" type="submit" name="find">Find</button>
+        </form>
+    </div>
+    <div class="forms">
+        <h3>Set new salary for employee</h3>
+        <form class="form-set" action="/set" method="post">
+            <input class="form-control inp" type="text" name="first" placeholder="first">
+            <input class="form-control inp" type="text" name="last" placeholder="last">
+            <input class="form-control inp" type="number" name="pay" placeholder="salary">
+            <button class="btn btn-warning" name="set" type="submit">Set</button>
+        </form>
+    </div>
+</div>
+<div class="sorts">
+    <form action="sortbyname" method="post">
+        <button id="sort-by-first" class="btn btn-warning" name="sort-by-name-up" type="submit">Sort by name UP</button>
+        <button id="sort-by-first1" class="btn btn-warning" name="sort-by-name-down" type="submit">Sort by name DOWN</button>
+    </form>
+    <form action="/sort" method="post">
+        <button id="sort-by-last" class="btn btn-warning" name="sort-by-last-up" type="submit">Sort by last UP</button>
+        <button id="sort-by-last2" class="btn btn-warning" name="sort-by-last-down" type="submit">Sort by lastDOWN</button>
+    </form>
+
+    <form action="sortbysalary" method="post">
+        <button id="sort-by-salary" class="btn btn-warning" name="sort-up-salary" type="submit">Sort by pay UP</button>
+        <button id="sort-by-salary2" class="btn btn-warning" name="sort-down-salary" type="submit">Sort by pay DOWN</button>
+    </form>
+</div>
+<div>
+    <h4>Numbers of employee:</h4>
+    <h4>{{amountofemployee}}</h4>
+</div>
+{{ showTable(query) }}
+{% endblock %}

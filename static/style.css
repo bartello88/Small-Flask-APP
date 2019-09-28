@@ -1,0 +1,26 @@
+li {
+    display: inline-block
+}
+
+.inp {
+    display: inline-block;
+    max-width: 20vh;
+}
+
+.forms {
+    display: inline;
+    padding-right: 40vh;
+}
+.sorts{
+}
+.sorts>form{
+    display: inline-block;
+    margin-right: 40vh;
+    width: 200px;
+}
+.btn {
+width:20vh;
+}
+h4 {
+display: inline-block;
+}
