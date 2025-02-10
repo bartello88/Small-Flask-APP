@@ -171,4 +171,4 @@ def set():
 
 
 if __name__ == '__name__':
-    app.run(host="0.0.0.0",port=8000)
+    app.run(host="0.0.0.0")
